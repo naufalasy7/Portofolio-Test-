@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================
+   DARK MODE (default) & LIGHT MODE VARIABLES
+========================================= */
+:root {
+    --bg-primary: #020617;
+    --bg-secondary: #030816;
+    --bg-card: #060b19;
+    --bg-card-alt: #0a0f1d;
+    --bg-project-card: #111827;
+    --nav-bg: rgba(2, 6, 23, 0.80);
+    --border-color: rgba(255, 255, 255, 0.05);
+    --border-subtle: rgba(255, 255, 255, 0.1);
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --text-faint: #334155;
+    --glow-color: rgba(30, 58, 138, 0.20);
+    --scrollbar-track: #020617;
+    --scrollbar-thumb: #334155;
+    --scrollbar-thumb-hover: #475569;
+    --skill-pill-border: rgba(255,255,255,0.1);
+    --skill-pill-bg: rgba(255,255,255,0.03);
+    --skill-pill-hover: rgba(255,255,255,0.08);
+    --hover-card-border: rgba(255,255,255,0.25);
+    --hover-card-bg: rgba(15,23,42,0.8);
+}
+
+html.light {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #f1f5f9;
+    --bg-card: #ffffff;
+    --bg-card-alt: #f8fafc;
+    --bg-project-card: #ffffff;
+    --nav-bg: rgba(248, 250, 252, 0.85);
+    --border-color: rgba(0, 0, 0, 0.07);
+    --border-subtle: rgba(0, 0, 0, 0.12);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --text-faint: #94a3b8;
+    --glow-color: rgba(59, 130, 246, 0.08);
+    --scrollbar-track: #f1f5f9;
+    --scrollbar-thumb: #cbd5e1;
+    --scrollbar-thumb-hover: #94a3b8;
+    --skill-pill-border: rgba(0,0,0,0.1);
+    --skill-pill-bg: rgba(0,0,0,0.03);
+    --skill-pill-hover: rgba(0,0,0,0.07);
+    --hover-card-border: rgba(0,0,0,0.15);
+    --hover-card-bg: rgba(248,250,252,0.95);
+}
+
+/* Pengaturan font utama dan warna latar keseluruhan */
+html, body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Styling kustom untuk Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover); }
+
+/* Theme transition on all elements */
+*, *::before, *::after {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Override Tailwind hardcoded bg colors with CSS variables */
+body { background-color: var(--bg-primary) !important; }
+.bg-\[\#020617\]  { background-color: var(--bg-primary) !important; }
+.bg-\[\#020617\]\/80 { background-color: var(--nav-bg) !important; }
+.bg-\[\#030816\]  { background-color: var(--bg-secondary) !important; }
+.bg-\[\#060b19\]  { background-color: var(--bg-card) !important; }
+.bg-\[\#0a0f1d\]  { background-color: var(--bg-card-alt) !important; }
+.bg-\[\#111827\]  { background-color: var(--bg-project-card) !important; }
+
+/* Nav border */
+nav { border-color: var(--border-color) !important; }
+nav a, nav span { color: var(--text-secondary); }
+nav .text-white { color: var(--text-primary) !important; }
+
+/* Section borders */
+.border-t.border-white\/5 { border-color: var(--border-color) !important; }
+.border-b.border-white\/5 { border-color: var(--border-color) !important; }
+
+/* Text overrides */
+.text-slate-300 { color: var(--text-secondary) !important; }
+.text-slate-400 { color: var(--text-muted) !important; }
+.text-slate-500 { color: var(--text-faint) !important; }
+.text-slate-600 { color: var(--text-faint) !important; }
+.text-white     { color: var(--text-primary) !important; }
+
+/* Card borders */
+.border-white\/5  { border-color: var(--border-color) !important; }
+.border-white\/10 { border-color: var(--border-subtle) !important; }
+.border-white\/20 { border-color: var(--border-subtle) !important; }
+
+/* Light mode: hero glow */
+html.light .bg-blue-900\/20 { background-color: var(--glow-color) !important; }
+
+/* Light mode: selection */
+html.light ::selection { background-color: #bfdbfe; color: #1e3a8a; }
+
+/* Light mode: project card text fixes */
+html.light .text-slate-200 { color: #334155 !important; }
+html.light .font-mono.text-blue-400 { color: #2563eb !important; }
+
+/* Light mode: timeline dot border */
+html.light .border-slate-900 { border-color: var(--bg-secondary) !important; }
+
+/* Light mode: hero badge */
+html.light .bg-white\/5 { background-color: rgba(0,0,0,0.04) !important; }
+html.light .hover\:bg-white\/10:hover { background-color: rgba(0,0,0,0.07) !important; }
+
+/* Light mode: nav bg override */
+html.light nav { background-color: var(--nav-bg) !important; backdrop-filter: blur(12px); }
+
+/* Light mode: CTA button */
+html.light .bg-white.text-slate-950 { background-color: #0f172a !important; color: #f8fafc !important; }
+html.light .hover\:bg-slate-200:hover { background-color: #1e293b !important; }
+
+/* Light mode: border-l accent */
+html.light .border-l-2.border-white\/20 { border-color: rgba(0,0,0,0.15) !important; }
+
+/* Layout untuk penumpukan (stacking) card project saat discroll */
+.project-stack-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 5rem;
+}
+
+.project-card {
+    position: sticky;
+    top: 6rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.project-card:nth-child(1)  { top: 6rem; }
+.project-card:nth-child(2)  { top: 7rem; }
+.project-card:nth-child(3)  { top: 8rem; }
+.project-card:nth-child(4)  { top: 9rem; }
+.project-card:nth-child(5)  { top: 10rem; }
+.project-card:nth-child(6)  { top: 11rem; }
+.project-card:nth-child(7)  { top: 12rem; }
+.project-card:nth-child(8)  { top: 13rem; }
+.project-card:nth-child(9)  { top: 14rem; }
+.project-card:nth-child(10) { top: 15rem; }
+
+/* Efek hover universal untuk card */
+.hover-card {
+    transition: all 0.3s ease;
+}
+.hover-card:hover {
+    border-color: var(--hover-card-border) !important;
+    background-color: var(--hover-card-bg) !important;
+    transform: translateY(-2px);
+}
+
+/* Styling untuk skill pill */
+.skill-pill {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--skill-pill-border);
+    background: var(--skill-pill-bg);
+    border-radius: 9999px;
+    transition: background 0.2s ease;
+}
+.skill-pill:hover {
+    background: var(--skill-pill-hover);
+}
+
+/* PROJECT STACK SECTION */
+.stack-container {
+    padding-bottom: 10vh;
+}
+.project-card {
+    position: sticky;
+    top: 15vh;
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5vh;
+    transition: transform 0.3s ease;
+}
+
+/* =========================================
+   THEME TOGGLE BUTTON
+========================================= */
+#themeToggle {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 9999px;
+    border: 1px solid var(--border-subtle);
+    background: var(--skill-pill-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--text-secondary);
+    flex-shrink: 0;
+}
+#themeToggle:hover {
+    background: var(--skill-pill-hover);
+    color: var(--text-primary);
+    border-color: var(--hover-card-border);
+}
+#themeToggle iconify-icon {
+    font-size: 1.1rem;
+    pointer-events: none;
+}
+
+/* Tombol sosial media di bagian paling bawah */
+.social-link {
+  transition: all 0.2s ease;
+}
+.social-link:hover {
+  border-color: var(--hover-card-border);
+  transform: translateY(-2px);
+}
